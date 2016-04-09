@@ -108,10 +108,22 @@ function* generator () {
 // var foo = Rx.Observable.fromEventPattern(addEventHandler, removeEventHandler)
 
 // Shorthand version
-var foo = Rx.Observable.fromEvent(document, 'click')
+// var foo = Rx.Observable.fromEvent(document, 'click')
 
-foo.subscribe(
-	(val) => console.log('clientX: ', val.clientX, 'clientY', val.clientY),
-	(err) => console.error('error: ', err),
-	() => console.log('done!')
-)
+// foo.subscribe(
+// 	(val) => console.log('clientX: ', val.clientX, 'clientY', val.clientY),
+// 	(err) => console.error('error: ', err),
+// 	() => console.log('done!')
+// )
+
+// Boring but very useful operators
+// empty, never, throw
+// var foo = Rx.Observable.empty(); // Does not deliver any values, simply calls done
+// var foo = Rx.Observable.never(); // Does not deliver any values, does not call done
+// var foo = Rx.Observable.throw(new Error('Boom!')) // Only does deliver error
+
+// foo.subscribe(
+// 	(val) => console.log(val),
+// 	(err) => console.error(err),
+// 	() => console.log('done!')
+// )
