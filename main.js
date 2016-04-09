@@ -145,3 +145,46 @@ function* generator () {
 // 	(err) => console.error('error: ', err),
 // 	() => console.log('done!')
 // )
+
+// Unsubscribe
+
+// Pure JS observable
+// function subscribe (observer) {
+// 	var num = 1
+// 	var id = setInterval(function() {
+// 		observer.next(num)
+// 		num += 1
+// 	}, 1000)
+// 	return function unsubscribe () {
+// 		clearInterval(id)
+// 	}
+// }
+// var unsubscribe = subscribe({
+// 	next: (val) => console.log('tick: ', val),
+// 	error: (err) => console.error('error: ', err),
+// 	complete: () => console.log('done!')
+// })
+// setTimeout(function() {
+// 	unsubscribe()
+// }, 4500)
+
+// RxJS version
+var foo = Rx.Observable.create(function subscribe (observer) {
+	var num = 1
+	var id = setInterval(function() {
+		observer.next(num)
+		num += 1
+	}, 1000)
+
+	return function unsubscribe () {
+		clearInterval(id)
+	}
+})
+var subscription = foo.subscribe(
+	(val) => console.log('tick: ', val),
+	(err) => console.error('error: ', err),
+	() => console.log('done!')
+)
+setTimeout(function() {
+	subscription.unsubscribe()
+}, 4500)
