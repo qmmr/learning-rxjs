@@ -127,3 +127,21 @@ function* generator () {
 // 	(err) => console.error(err),
 // 	() => console.log('done!')
 // )
+
+// Time related Observables
+
+// var interval = Rx.Observable.interval(1000);
+// interval.subscribe(
+// 	(val) => console.log('tick: ', val),
+// 	(err) => console.error('error: ', err),
+// 	() => console.log('done!')
+// )
+
+// var date = new Date(new Date().getTime() + 3000)
+// console.log('start, waiting 3000ms then start tocking')
+// var timer = Rx.Observable.timer(date, 1000);
+// timer.subscribe(
+// 	(val) => console.log('tocking: ', val),
+// 	(err) => console.error('error: ', err),
+// 	() => console.log('done!')
+// )
