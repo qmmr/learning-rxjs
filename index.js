@@ -3,6 +3,8 @@ var app = express()
 var path = require('path')
 var PORT = process.env.PORT || 3000
 
+app.use(express.static(path.resolve(__dirname, 'public')))
+
 app.get('/', function(req, res) {
 	res.sendFile(path.resolve(__dirname, 'index.html'))
 })
