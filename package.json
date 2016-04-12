@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Marcin Kumorek <impressive404@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "eslint": "2.7.0",
-    "eslint-config-qmmr": "2.0.4"
+    "eslint-config-qmmr": "2.0.4",
+    "nodemon": "1.9.1"
+  },
+  "dependencies": {
+    "express": "4.13.4"
   }
 }
